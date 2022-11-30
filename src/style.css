@@ -1,20 +1,21 @@
 body {
     margin-top: 20px;
+    font-family: 'Arsenal', sans-serif;
 }
 
 .weather-app-wrapper {
     max-width: 600px;
     margin: 0 auto;
+    color: #385170;
   
 }
 
 .weather-app {
     margin-bottom: 0;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid #385170;
     border-radius: 20px;
     background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    
 }
 
 h1 {
@@ -76,4 +77,23 @@ a {
 
 small {
     opacity: 0.7;
+}
+
+
+
+.search-bar {
+    border-radius: 20px;
+
+}
+
+.search-button {
+    border-radius: 20px;
+border: none;
+    background: white;
+    color: #385170;
+}
+
+.search-button:hover {
+    background: #385170;
+    color: white;
 }
