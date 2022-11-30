@@ -24,6 +24,7 @@ h1 {
     font-weight: 100;
     line-height: 28px;
     margin-bottom: 0;
+    margin-top: 20px;
 }
 
 ul {
@@ -96,4 +97,30 @@ border: none;
 .search-button:hover {
     background: #385170;
     color: white;
+}
+
+
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.forecast-day {
+    font-size: 16px;
+    opacity: 0.9;
+
+}
+
+.forecast-temp {
+    font-size: 13px;
+    border: 1px solid gray;
+    border-radius: 30px;
+}
+
+.forecast-temp-max {
+    opacity: 0.8;
+}
+
+.forecast-temp-min {
+    opacity: 0.5;
 }
