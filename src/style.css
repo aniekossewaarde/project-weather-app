@@ -68,3 +68,12 @@ li:first-letter {
 a {
     text-decoration: none;
 }
+
+.weather-temperature .active {
+ color: #081f37;
+ cursor: default;
+}
+
+small {
+    opacity: 0.7;
+}
