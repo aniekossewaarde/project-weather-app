@@ -1,10 +1,19 @@
-.weather-app {
-    font-family: 'Rajdhani', sans-serif;
+body {
+    margin-top: 20px;
+}
+
+.weather-app-wrapper {
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
+  
+}
+
+.weather-app {
+    margin-bottom: 0;
     padding: 20px;
     border: 1px solid black;
     border-radius: 20px;
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     
 }
 
@@ -27,4 +36,30 @@ li {
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
+}
+
+.overview {
+    margin-bottom: 20px;
+}
+
+.weather-temperature img {
+    margin-right: 7px;
+    height: 64px;
+    width: 64px;
+}
+
+.weather-temperature strong {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.weather-temperature .units {
+    position: relative;
+    font-size: 16px;    
+    top: -34px;
+}
+
+a {
+    text-decoration: none;
 }

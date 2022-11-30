@@ -18,8 +18,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="weather-app-wrapper">
 <div class="weather-app">
-        <h1>Barcelona</h1>
+       <div class="overview"> <h1>Barcelona</h1>
         <ul>
             <li>
                 Wednesday 11:44
@@ -27,11 +28,16 @@
             <li>
                 Clear
             </li>
-        </ul>
+        </ul> 
+    </div>
         <div class="row">
             <div class="col-6">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="clear"/>
-                12°C | °F
+                <div class="d-flex weather-temperature weather-temperature">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="clear" id="icon"/>
+                <div>
+                <strong id="temperature">12</strong><span class="units">°C | <a href="#">°F</a></span>
+            </div>
+            </div>
             </div>
             <div class="col-6">
                 <ul>
@@ -41,10 +47,13 @@
                 </ul>
             </div>
         </div>
+    </div>
+  
         <small>
             <a href="https://github.com/aniekossewaarde/project-weather-app" target="_blank">
             Open-source code</a>, by <a href="https://www.linkedin.com/in/aniek-ossewaarde-88a17085/?originalSubdomain=es" target="_blank"> Aniek Ossewaarde</a>
         </small>
+    
     </div>
 
 <script src="src/app.js"></script>
