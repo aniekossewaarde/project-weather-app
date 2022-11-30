@@ -16,10 +16,6 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`
 }
 
-let apiKey = "ab69138d433c5c85edafefc09e466c07";
-let city = "Barcelona";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-
 
 function displayTemperature(response) {
     console.log(response.data);
@@ -40,4 +36,20 @@ function displayTemperature(response) {
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+    let apiKey = "ab69138d433c5c85edafefc09e466c07";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+
+}
+
+search("Barcelona");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
