@@ -30,7 +30,6 @@ return days[day];
 function getForecast(coordinates) {
     let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
-console.log(apiUrl);
 axios.get(apiUrl).then(showForecast);
 }
 
@@ -70,27 +69,6 @@ function handleSubmit(event) {
 
 }
 
-// units conversion
-
-
-function showFahrenheit(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    celciusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let fahrenheitTemperature = (celciusTemperature * 9/5) + 32;
-
-temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-   
-}
-
-function showCelcius(event) {
-    event.preventDefault();
-    celciusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
 
 
 // forecast
@@ -125,21 +103,9 @@ forecastElement.innerHTML = forecastHTML;
 
 // global variables
 
-let celciusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelcius);
-
-
-
-
-
 
 search("Barcelona");
 
