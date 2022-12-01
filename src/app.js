@@ -19,6 +19,14 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`
 }
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+}
+
 function getForecast(coordinates) {
     let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
@@ -88,18 +96,24 @@ function showCelcius(event) {
 // forecast
 
 function showForecast(response) {
-    console.log(response.data.daily);
+let forecast = response.data.daily;
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = `<div class="row">`;
-let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-days.forEach(function(day) {
+
+forecast.forEach(function(forecastDay, index) {
+    if (index < 6) {
     forecastHTML =  forecastHTML + `
 
-    <div class="col-2"> <div class="forecast-day">${day}</div> 
-        <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="icons"  width="42px"/> 
-    <div class="forecast-temp"><span class="forecast-temp-max">18°</span> <span class="forecast-temp-min">12°</span></div>
+    <div class="col-2"> 
+    <div class="forecast-day">${formatDay(forecastDay.dt)}</div> 
+        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icons"  width="42px"/> 
+    <div class="forecast-temp">
+    <span class="forecast-temp-max">${Math.round(forecastDay.temp.max)}°</span>
+     <span class="forecast-temp-min">${Math.round(forecastDay.temp.min)}°</span>
+     </div>
     </div>
 `;
+}
 });
    
 forecastHTML = forecastHTML + `</div>`;
