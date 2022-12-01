@@ -41,38 +41,6 @@ small {
 
 
 
-.overview {
-    margin-bottom: 30px;
-}
-
-.weather-temperature {
-    margin-left: 40px;
-}
-
-.weather-temperature img {
-    margin-right: 7px;
-    height: 64px;
-    width: 64px;
-}
-
-.weather-temperature strong {
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 1;
-}
-
-.weather-temperature .units {
-    position: relative;
-    font-size: 16px;    
-    top: -34px;
-}
-
-.weather-temperature .active {
- color: #081f37;
- cursor: default;
-}
-
-
 .weather-app-wrapper {
     max-width: 600px;
     margin: 0 auto;
@@ -103,6 +71,33 @@ border: none;
 .search-button:hover {
     background: #385170;
     color: white;
+}
+
+
+.overview {
+    margin-bottom: 30px;
+}
+
+.weather-temperature {
+    margin-left: 40px;
+}
+
+.weather-temperature img {
+    margin-right: 7px;
+    height: 64px;
+    width: 64px;
+}
+
+.weather-temperature strong {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.weather-temperature .units {
+    position: relative;
+    font-size: 16px;    
+    top: -34px;
 }
 
 
