@@ -29,6 +29,7 @@ function displayTemperature(response) {
     let dateTimeElement = document.querySelector("#dateTime");
     let iconElement = document.querySelector("#icon");
 
+   
     celciusTemperature = response.data.main.temp;
 
     temperatureElement.innerHTML = Math.round(celciusTemperature);
@@ -76,6 +77,29 @@ function showCelcius(event) {
 }
 
 
+// forecast
+
+function showForecast() {
+let forecastElement = document.querySelector("#forecast");
+let forecastHTML = `<div class="row">`;
+let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+days.forEach(function(day) {
+    forecastHTML =  forecastHTML + `
+
+    <div class="col-2"> <div class="forecast-day">${day}</div> 
+        <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="icons"  width="42px"/> 
+    <div class="forecast-temp"><span class="forecast-temp-max">18°</span> <span class="forecast-temp-min">12°</span></div>
+    </div>
+`;
+});
+   
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML; 
+}
+
+
+
+
 // global variables
 
 let celciusTemperature = null;
@@ -89,7 +113,7 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", showCelcius);
 
-
+showForecast();
 
 
 
